@@ -6,3 +6,15 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)   
+    price = models.DecimalField(max_digits=7, decimal_places=2)
+    description = models.TextField()
+    image = models.ImageField(upload_to='products/')
+    stock = models.IntegerField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.name
