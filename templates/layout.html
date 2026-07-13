@@ -10,31 +10,39 @@
 </head>
 <body class="d-flex flex-column min-vh-100" style="background: linear-gradient(160deg, #eaf2fb 0%, #cfe0f5 50%, #a9c6ec 100%);">
 
-  <nav class="navbar navbar-expand-lg" style="background-color: #1a1a2e;">
-    <div class="container-fluid">
-      <a class="navbar-brand text-light fw-bold fs-3" href="#">Nova<span class="text-danger">Cart</span></a>
+<nav class="navbar navbar-expand-lg" style="background-color: #1a1a2e;">
+    <div class="container-fluid d-flex align-items-center">
+      
+      <a class="navbar-brand text-light fw-bold fs-3 flex-shrink-0" href="#">Nova<span class="text-danger">Cart</span></a>
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>    
 
+      <div class="collapse navbar-collapse d-flex" id="navbarNav">
+        <form class="d-flex flex-grow-1 mx-4" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+          <button class="btn btn-danger" type="submit">Search</button>
+        </form>
+      </div>
+
+      <ul class="navbar-nav flex-row flex-shrink-0">
+        <li class="nav-item">
+          <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light ms-3" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light ms-3" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light disabled ms-3" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
    <main class="flex-grow-1 text-center py-4 mt-4">
     {% block content %}
       <h1>Welcome to my website!</h1>
