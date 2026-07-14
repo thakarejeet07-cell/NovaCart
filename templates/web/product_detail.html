@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ products.name }} - NovaCart{% endblock title %}
+
+{% block content %}
+<div class="container flex-grow-1 d-flex align-items-center justify-content-center py-5">
+    <div class="row g-5 align-items-center">
+        <div class="col-md-6">
+            {% if products.image %}
+                <img src="{{ products.image.url }}" class="img-fluid rounded-4 shadow-sm" alt="{{ products.name }}">
+            {% else %}
+                <div class="bg-secondary bg-opacity-25 rounded-4 d-flex align-items-center justify-content-center" style="height: 350px;">
+                    <span class="text-muted">No image available</span>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <p class="text-muted mb-1">{{ products.category }}</p>
+            <h2 class="fw-bold mb-3">{{ products.name }}</h2>
+            <p class="fs-4 fw-semibold text-danger mb-4">₹{{ products.price }}</p>
+            <p class="mb-4">{{ products.description }}</p>
+            <p class="mb-4"><strong>In Stock:</strong> {{ products.stock }} units</p>
+            <button class="btn btn-dark btn-lg rounded-pill px-5">Add to Cart</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
