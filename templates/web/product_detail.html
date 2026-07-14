@@ -11,7 +11,7 @@
             {% else %}
                 <div class="bg-secondary bg-opacity-25 rounded-4 d-flex align-items-center justify-content-center" style="height: 350px;">
                     <span class="text-muted">No image available</span>
-                </div>
+                </div>  
             {% endif %}
         </div>
         <div class="col-md-6">
@@ -19,7 +19,7 @@
             <h2 class="fw-bold mb-3">{{ products.name }}</h2>
             <p class="fs-4 fw-semibold text-danger mb-4">₹{{ products.price }}</p>
             <p class="mb-4">{{ products.description }}</p>
-            <p class="mb-4"><strong>In Stock:</strong> {{ products.stock }} units</p>
+            <p class="mb-4"><strong>In Stock:</strong> {{ products.stock }} units</p>1
             <button class="btn btn-dark btn-lg rounded-pill px-5">Add to Cart</button>
         </div>
     </div>
