@@ -10,33 +10,23 @@
 </head>
 <body class="d-flex flex-column min-vh-100" style="background: linear-gradient(160deg, #eaf2fb 0%, #cfe0f5 50%, #a9c6ec 100%);">
 
-<nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #1a1a2e;">
-    <div class="container-fluid d-flex align-items-center px-4">
-
-      <a class="navbar-brand text-light fw-bold fs-3 flex-shrink-0" href="#">Nova<span class="text-danger">Cart</span></a>
+<nav class="navbar navbar-expand-lg" style="background-color: #f0e2db;">
+    <div class="container-fluid d-flex align-items-center justify-content-end px-4 py-4">
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse d-flex" id="navbarNav">
-        <form class="d-flex flex-grow-1 mx-4" role="search">
-          <input class="form-control me-2 rounded-pill" type="search" placeholder="Search products..." aria-label="Search">
-          <button class="btn btn-danger rounded-pill px-4" type="submit">Search</button>
-        </form>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <ul class="navbar-nav flex-row align-items-center gap-4">
+          <li class="nav-item">
+            <a class="nav-link fw-bold fs-1" style="color: #14142b; text-decoration: underline;" href="{% url 'home' %}">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold fs-1" style="color: #14142b;" href="#">Bag (0)</a>
+          </li>
+        </ul>
       </div>
-
-      <ul class="navbar-nav flex-row flex-shrink-0 align-items-center">
-        <li class="nav-item">
-          <a class="nav-link text-light fw-semibold active" aria-current="page" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light fw-semibold ms-4" href="#">Category</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-light rounded-pill px-3 py-1 ms-4" href="#">Login</a>
-        </li>
-      </ul>
 
     </div>
 </nav>
@@ -47,12 +37,44 @@
     {% endblock %}
    </main>
 
-    <footer class="text-light text-center py-4 mt-5" style="background-color: #1a1a2e;">
-        {% block footer %}
-            <p class="mb-1 fw-semibold fs-5">Nova<span class="text-danger">Cart</span></p>
-            <p class="mb-0 opacity-75 small">© 2026 NovaCart. All rights reserved.</p>
-        {% endblock %}
-    </footer>
+<footer style="background-color: #f0e2db; border-top: 1px solid #14142b;">
+    {% block footer %}
+    <div class="container-fluid px-4 py-4">
+        <div class="row">
+
+            <div class="col">
+                <p class="fw-bold mb-1" style="color: #14142b;">NovaCart</p>
+                <p class="mb-0" style="color: #14142b;">All rights reserved © 2026</p>
+            </div>
+
+            <div class="col">
+                <p class="fw-semibold mb-0" style="color: #14142b;">24/7 Customer Support</p>
+                <p class="fw-semibold mb-0" style="color: #14142b;">Secure Payments</p>
+                <p class="fw-semibold mb-0" style="color: #14142b;">Fast Delivery Across India</p>
+            </div>
+
+            <div class="col">
+                <a href="#" class="fw-semibold text-decoration-none" style="color: #14142b;">Privacy Policy</a>
+            </div>
+
+            <div class="col">
+                <p class="fw-semibold mb-1"><a href="#" class="text-decoration-none" style="color: #14142b;">Instagram</a></p>
+                <p class="fw-semibold mb-1"><a href="#" class="text-decoration-none" style="color: #14142b;">LinkedIn</a></p>
+            </div>
+
+            <div class="col">
+                <p class="fw-semibold mb-1"><a href="#" class="text-decoration-none" style="color: #14142b;">Work</a></p>
+                <p class="fw-semibold mb-1"><a href="#" class="text-decoration-none" style="color: #14142b;">Services</a></p>
+                <p class="fw-semibold mb-1"><a href="#" class="text-decoration-none" style="color: #14142b;">About</a></p>
+                <p class="fw-semibold mb-0"><a href="#" class="text-decoration-none" style="color: #14142b;">Careers</a></p>
+            </div>
+            <div class="col">
+                <p class="fw-semibold mb-1"><class="text-decoration-none" style="color: #14142b;">Made by Jeet</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</footer>
 
 </body>
 </html>

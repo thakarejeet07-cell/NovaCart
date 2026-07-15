@@ -3,29 +3,77 @@
 {% block title %}Homepage{% endblock title %}
 
 {% block content %}
-<div class="container py-5">
-    <h2 class="text-center fw-bold mb-2">Our Products</h2>
-    <p class="text-center text-muted mb-5">Handpicked items just for you</p>
-    <div class="row g-4">
-        {% for product in products %}
-        <div class="col-md-4">
-            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-dark">
-                <div class="card h-100 border-0 shadow-sm rounded-4">
-                    {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top rounded-top-4" style="height: 220px; object-fit: cover;" alt="{{ product.name }}">
-                    {% endif %}
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="fw-bold mb-1">{{ product.name }}</h5>
-                        <p class="text-muted small mb-2">{{ product.description|truncatewords:15 }}</p>
-                        <p class="fw-semibold text-danger fs-5 mb-3">₹{{ product.price }}</p>
-                        <button class="btn btn-dark rounded-pill px-4 mt-auto">Add to Cart</button>
-                    </div>
-                </div>
-            </a>
-        </div>
-        {% empty %}
-        <p class="text-center text-muted">No products yet — add some from the admin panel.</p>
-        {% endfor %}
+<div style="background-color: #f0e2db;">
+
+    <!-- Hero title -->
+    <div class="container-fluid px-4 pt-4">
+        <h1 class="fw-bold mb-6 " style="color: #14142b; font-size: 21.7rem; line-height: 0.9; letter-spacing: -0.02em;">
+            NOVACART<sup style="font-size: 2rem;">®</sup>
+        </h1>
     </div>
+
+    <!-- Meta row -->
+    <div class="container-fluid px-4 py-4" style="border-top: 1px solid #14142b;">
+        <div class="row">
+            <div class="col-md-2">
+                <p class="fw-bold mb-0" style="color: #14142b;">NOVACART</p>
+            </div>
+            <div class="col-md-4">
+                <p class="fw-bold mb-2" style="color: #14142b;">WHY SHOP WITH US?</p>
+                <p class="mb-0" style="color: #14142b;">
+                    NovaCart is designed to make online shopping fast, secure, and convenient. Browse thousands of products across multiple categories, enjoy secure payments, quick delivery, easy returns, and a shopping experience you can trust.
+                </p>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-1">
+                <p class="fw-bold mb-4" style="color: #14142b;">Call-to-Action SHOP NOW</p>
+                <p class="fw-bold mb-0" style="color: #14142b;">SHIPPING & RETURNS</p>
+            </div>
+            <div class="col-md-1 text-end">
+                <p class="fw-bold mb-0" style="color: #14142b;">© 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product grid -->
+    <div class="container-fluid px-4 pb-5">
+        <div class="row g-4">
+            {% for product in products %}
+            <div class="col-md-3">
+                <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="w-100 mb-3" style="height: 340px; object-fit: cover;" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="d-flex justify-content-between align-items-start">
+                        <p class="mb-1 fw-normal" style="color: #14142b; font-size: 1.1rem;">{{ product.name }}</p>
+                        <p class="mb-1 fw-normal" style="color: #14142b; font-size: 1.1rem;">₹{{ product.price }}</p>
+                    </div>
+                    <p class="small mb-0" style="color: #14142b;">
+                        <span style="color: #14142b;"></span> APPAREL
+                    </p>
+                </a>
+            </div>
+            {% empty %}
+            <p class="text-center" style="color: #14142b;">No products yet — add some from the admin panel.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bottom banner -->
+    <div class="container-fluid px-4 py-5" style="border-top: 2px solid #14142b;">
+        <div class="row align-items-start">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-0" style="color: #14142b; font-size: 5rem;">Made for everyday shopping.</h2>
+                <h2 class="fw-bold mb-4" style="color: #6b6b6b; font-size: 5rem;"> Built for everyone.</h2>
+            </div>
+            <div class="col-md-4 text-end">
+                <h2 class="fw-bold mb-0" style="color: #14142b; font-size: 3rem;">©26</h2>
+            </div>
+        </div>
+        <p class="mb-0 mt-5" style="color: #14142b;">
+            From daily essentials to the latest trends, NovaCart brings together quality products, trusted sellers, and a seamless shopping experience—all in one place.
+        </p>
+    </div>
+
 </div>
 {% endblock %}
