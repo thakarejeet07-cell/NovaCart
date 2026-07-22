@@ -39,10 +39,16 @@
                     In Stock — {{ products.stock }} units
                 </p>
             </div>
+            <form method="post" action="{% url 'add_to_cart' products.id %}" class="d-flex align-items-center" style="gap: 24px;">
+                {% csrf_token %}
+                <button type="button" onclick="this.nextElementSibling.stepDown()" class="btn border-0 fw-bold" style="color: #14142b; font-size: 1.5rem;">−</button>
+                <input type="number" name="quantity" value="1" min="1" class="text-center border-0 bg-transparent fw-bold" style="color: #14142b; font-size: 1.3rem; width: 40px;">
+                <button type="button" onclick="this.previousElementSibling.stepUp()" class="btn border-0 fw-bold" style="color: #14142b; font-size: 1.5rem;">+</button>
 
-            <button class="btn fw-bold px-5 py-3" style="background-color: #14142b; color: #f0e2db; border-radius: 0; font-size: 1.1rem; letter-spacing: 0.05em;">
-                ADD TO CART
-            </button>
+                <button type="submit" class="btn fw-bold px-5 py-3" style="background-color: #14142b; color: #f0e2db; border-radius: 0; font-size: 1.1rem; letter-spacing: 0.05em;">
+                    ADD TO CART
+                </button>                
+            </form>
         </div>
 
     </div>
